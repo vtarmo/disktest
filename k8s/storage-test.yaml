@@ -10,8 +10,8 @@ spec:
   resources:
     requests:
       storage: 20Gi
-  storageClassName: longhorn
-  # storageClassName: openebs-localpv
+  # storageClassName: longhorn
+  storageClassName: openebs-localpv
 ---
 apiVersion: v1
 kind: Pod
@@ -22,10 +22,10 @@ metadata:
 spec:
   containers:
     - name: fio-container
-      image: ljishen/fio:latest
+      image: ghcr.io/vtarmo/disktest:main
       command: ["/bin/sh", "-c", "tail -f /dev/null"]
       volumeMounts:
-        - mountPath: /data
+        - mountPath: /testvol
           name: fio-volume
   volumes:
     - name: fio-volume
