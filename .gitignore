@@ -1,0 +1,4 @@
+.ignores/
+.vscode/
+.vscode-test/
+.DS_Store
