@@ -1,8 +1,8 @@
 FROM alpine:latest
 
 RUN apk update && apk add --no-cache \
-  bash \  
-  fio \
+  bash \
+  fio=3.41-r0 \
   curl \
   iputils \
   wget \
